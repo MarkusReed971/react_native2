@@ -51,7 +51,7 @@ const CompanyListScreen = ({navigation, context}) => {
                     goToTop(scrollView)
                     Keyboard.dismiss()
                 }}>
-                    <View style={styles.button}><Icon style={styles.icon} name={'search'} size={25} color="#000"  /></View>
+                    <View style={styles.button}><Icon style={styles.icon} name={'search'} size={20} color="#000"  /></View>
                 </TouchableOpacity>
             </View>
         </View>
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: '#fa8128',
-        paddingVertical: 7,
-        paddingHorizontal: 15,
+        paddingVertical: 10,
+        paddingHorizontal: 10,
         borderRadius: 30,
     },
     buttonText: {
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
         height: 60,
     },
     searchInput: {
-        width: '83%',
+        width: '85%',
         backgroundColor: Colors.light,
         // borderWidth: 1,
         borderRadius: 30,
