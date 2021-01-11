@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {ScrollView, View, TextInput, StyleSheet, Text, TouchableOpacity, Keyboard} from "react-native";
 import Colors from "react-native/Libraries/NewAppScreen/components/Colors";
 import {withContext} from "./Context";
+import Icon from "react-native-vector-icons/FontAwesome5";
 // import {Grid, XAxis, YAxis, BarChart} from "react-native-svg-charts";
 
 
@@ -50,7 +51,7 @@ const CompanyListScreen = ({navigation, context}) => {
                     goToTop(scrollView)
                     Keyboard.dismiss()
                 }}>
-                    <View style={styles.button}><Text style={styles.buttonText}>Найти</Text></View>
+                    <View style={styles.button}><Icon style={styles.icon} name={'search'} size={25} color="#000"  /></View>
                 </TouchableOpacity>
             </View>
         </View>
@@ -64,11 +65,10 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     button: {
-        backgroundColor: 'dodgerblue',
-        paddingVertical: 3,
-        paddingHorizontal: 10,
-        borderTopRightRadius: 10,
-        borderBottomRightRadius: 10,
+        backgroundColor: '#fa8128',
+        paddingVertical: 7,
+        paddingHorizontal: 15,
+        borderRadius: 30,
     },
     buttonText: {
         // textTransform: 'uppercase',
@@ -80,13 +80,14 @@ const styles = StyleSheet.create({
         // minHeight: Dimensions.get('window').height - 175,
     },
     companyText: {
-        color: '#b3b3b3',
+        color: Colors.black,
+        marginVertical: 10,
     },
     companyTitle: {
         fontSize: 20,
     },
     span: {
-        color: Colors.black,
+        color: '#fa8128',
         textTransform: 'uppercase',
     },
     companyItem: {
@@ -94,7 +95,8 @@ const styles = StyleSheet.create({
         padding: 20,
         margin: 10,
         marginBottom: 0,
-        borderRadius: 10,
+        // borderRadius: 10,
+        borderWidth: 1,
     },
     inputBox: {
         flexDirection: 'row',
@@ -103,16 +105,16 @@ const styles = StyleSheet.create({
         height: 60,
     },
     searchInput: {
-        width: '80%',
+        width: '83%',
         backgroundColor: Colors.light,
         // borderWidth: 1,
-        borderTopLeftRadius: 10,
-        borderBottomLeftRadius: 10,
+        borderRadius: 30,
         paddingVertical: 3,
-        paddingHorizontal: 10,
+        paddingHorizontal: 15,
         // textTransform: 'uppercase',
         lineHeight: 34,
         fontSize: 18,
+        marginRight: 10,
     }
 })
 
