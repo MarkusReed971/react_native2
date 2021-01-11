@@ -33,7 +33,10 @@ const CompanyListScreen = ({navigation, context}) => {
     const [scrollView, setScrollView] = useState()
 
     return (
-        <View>
+        <View style={styles.container}>
+            <ScrollView style={styles.scrollBox} ref={(c) => {setScrollView(c)}}>
+                { companyList ? CompanyList(companyList, navigation, context.getCompanyAsync) : null}
+            </ScrollView>
             <View style={styles.inputBox}>
                 <TextInput
                     style={styles.searchInput}
@@ -50,14 +53,16 @@ const CompanyListScreen = ({navigation, context}) => {
                     <View style={styles.button}><Text style={styles.buttonText}>Найти</Text></View>
                 </TouchableOpacity>
             </View>
-            <ScrollView style={styles.scrollBox} ref={(c) => {setScrollView(c)}}>
-                { companyList ? CompanyList(companyList, navigation, context.getCompanyAsync) : null}
-            </ScrollView>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+    },
     button: {
         backgroundColor: 'dodgerblue',
         paddingVertical: 3,
@@ -71,7 +76,8 @@ const styles = StyleSheet.create({
         lineHeight: 34,
     },
     scrollBox: {
-        marginBottom: 60,
+        marginBottom: 10,
+        // minHeight: Dimensions.get('window').height - 175,
     },
     companyText: {
         color: '#b3b3b3',
@@ -94,6 +100,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         padding: 10,
         backgroundColor: Colors.white,
+        height: 60,
     },
     searchInput: {
         width: '80%',
