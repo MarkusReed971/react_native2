@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.white,
         padding: 20,
         paddingVertical: 10,
-        borderRadius: 5,
         marginBottom: 10,
+        borderWidth: 1,
     },
     h2: {
         fontSize: 16,

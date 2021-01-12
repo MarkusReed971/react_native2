@@ -32,10 +32,11 @@ const Allowance = ({allowance}) => {
 
 const styles = StyleSheet.create({
     card: {
-        margin: 10,
         backgroundColor: Colors.white,
         padding: 20,
-        borderRadius: 5,
+        margin: 10,
+        marginBottom: 0,
+        borderWidth: 1,
     },
     h1: {
         fontSize: 18,

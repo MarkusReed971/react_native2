@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack';
+import Colors from "react-native/Libraries/NewAppScreen/components/Colors";
 import CompanyListScreen from "./components/CompanyListScreen";
 import InformationScreen from "./components/InformationScreen";
 import FinanceScreen from "./components/FinanceScreen";
@@ -21,12 +22,30 @@ const Main = () => {
           <MainStack.Screen
               name={'CompanyList'}
               component={CompanyListScreen}
-              options={{title: 'Поиск компаний'}}
+              options={{
+                  title: 'Поиск компаний',
+                  headerStyle: {
+                      backgroundColor: Colors.dark,
+                  },
+                  headerTitleStyle: {
+                      color: Colors.white,
+                  },
+              }}
           />
           <MainStack.Screen
               name={'Company'}
               component={Company}
-              options={({ route }) => ({ title: route.params.headerTitle })}
+              options={
+                  ({ route }) => ({
+                      title: route.params.headerTitle,
+                      headerStyle: {
+                          backgroundColor: Colors.dark,
+                      },
+                      headerTitleStyle: {
+                          color: Colors.white,
+                      },
+                  })
+              }
           />
       </MainStack.Navigator>
   )

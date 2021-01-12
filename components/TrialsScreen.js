@@ -3,6 +3,7 @@ import {ScrollView, StyleSheet, Text, View} from "react-native";
 import TabBar from "./TabBar";
 import {withContext} from "./Context";
 import Trial from "./Trial";
+import Colors from "react-native/Libraries/NewAppScreen/components/Colors";
 
 const TrialList = trialList => trialList.map(trial => <Trial key={trial.name_delo} trial={trial} />)
 
@@ -10,7 +11,7 @@ const TrialsScreen = ({navigation, context}) => {
     const {trialList} = context
 
     return (
-        <View>
+        <View style={styles.container}>
             <TabBar navigation={navigation} />
             <ScrollView style={styles.scrollView}>
                 {trialList ? TrialList(trialList) : <Text style={{textAlign: 'center'}}>Нет данных</Text>}
@@ -21,8 +22,12 @@ const TrialsScreen = ({navigation, context}) => {
 }
 
 const styles = StyleSheet.create({
+    container : {
+        backgroundColor: Colors.light,
+    },
     scrollView: {
-        marginBottom: 50,
+        marginBottom: 60,
+        minHeight: 660,
     },
 })
 

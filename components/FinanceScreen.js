@@ -19,7 +19,7 @@ const FinanceScreen = ({navigation, context}) => {
         {
             data: dohod,
             svg: {
-                fill: 'rgb(134, 65, 244)',
+                fill: 'rgb(34, 65, 244)',
             },
         },
         {
@@ -32,13 +32,13 @@ const FinanceScreen = ({navigation, context}) => {
     const formatSelect = years => years.map((item, index) => <Picker.Item key={index} label={item + ' г.'} value={index} />).reverse()
 
     return (
-        <View>
+        <View style={styles.container}>
             <TabBar navigation={navigation} />
-            <ScrollView>
+            <ScrollView style={{minHeight: 1000}}>
                 {finance[0] ? (
                     <View>
 
-                        <View style={{ height: 300, padding: 20, backgroundColor: Colors.white, borderRadius: 5, margin: 10 }}>
+                        <View style={{ height: 300, padding: 20, backgroundColor: Colors.white, borderWidth: 1, margin: 10 }}>
                             <View style={styles.labelBox}>
                                 <View style={styles.colorOuter}>
                                     <View style={styles.color1}></View>
@@ -104,27 +104,37 @@ const FinanceScreen = ({navigation, context}) => {
 }
 
 const styles = StyleSheet.create({
+    container : {
+        backgroundColor: Colors.light,
+        paddingBottom: 200,
+    },
+    card: {
+        backgroundColor: Colors.white,
+        padding: 20,
+        margin: 10,
+        marginBottom: 0,
+        borderWidth: 1,
+    },
     picker: {
-        width: Dimensions.get('window').width -40,
+        width: Dimensions.get('window').width -60,
         height: 40,
-
     },
     pickerBox: {
-        backgroundColor: Colors.dark,
+        backgroundColor: Colors.light,
         borderRadius: 5,
         marginBottom: 10,
     },
-    card: {
-        marginHorizontal: 10,
-        backgroundColor: Colors.white,
-        borderRadius: 5,
-        padding: 10,
-    },
+    // card: {
+    //     marginHorizontal: 10,
+    //     backgroundColor: Colors.white,
+    //     borderRadius: 5,
+    //     padding: 10,
+    // },
     color1: {
         width: 20,
         height: 15,
         borderRadius: 2,
-        backgroundColor: 'rgb(134, 65, 244)',
+        backgroundColor: 'rgb(34, 65, 244)',
         marginTop: 3,
     },
     color2: {

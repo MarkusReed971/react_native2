@@ -1,7 +1,8 @@
 import React from "react";
-import {Button, StyleSheet, View} from "react-native";
+import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import TabBar from "./TabBar";
 import {withContext} from "./Context";
+import Colors from "react-native/Libraries/NewAppScreen/components/Colors";
 
 
 const DownloadScreen = ({navigation, context}) => {
@@ -9,7 +10,9 @@ const DownloadScreen = ({navigation, context}) => {
         <View>
             <TabBar navigation={navigation} />
             <View style={styles.container}>
-                <Button title={'Скачать файл выписки ЕГРЮЛ'} onPress={() => {context.downloadEGRUL()}} />
+                <TouchableOpacity onPress={() => { context.downloadEGRUL() }}>
+                    <View style={styles.button}><Text style={styles.buttonText}>Скачать файл выписки ЕГРЮЛ</Text></View>
+                </TouchableOpacity>
             </View>
         </View>
 
@@ -18,7 +21,19 @@ const DownloadScreen = ({navigation, context}) => {
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: Colors.light,
         padding: 20,
+        minHeight: 670,
+    },
+    button: {
+        backgroundColor: '#fa8128',
+        paddingVertical: 10,
+        paddingHorizontal: 10,
+        borderRadius: 30,
+    },
+    buttonText: {
+        textAlign: 'center',
+        fontSize: 18,
     },
 })
 

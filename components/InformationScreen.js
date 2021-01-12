@@ -53,7 +53,7 @@ const InformationScreen = ({navigation, context}) => {
     const basicInfo = context.company.basic_information;
 
     return (
-        <View>
+        <View style={styles.container}>
             <TabBar navigation={navigation} />
             <ScrollView style={styles.scrollView}>
                 <View style={styles.card}>
@@ -77,6 +77,16 @@ const InformationScreen = ({navigation, context}) => {
 }
 
 const styles = StyleSheet.create({
+    container : {
+        backgroundColor: Colors.light,
+    },
+    card: {
+        backgroundColor: Colors.white,
+        padding: 20,
+        margin: 10,
+        marginBottom: 0,
+        borderWidth: 1,
+    },
     h1: {
         fontSize: 18,
         fontWeight: 'bold',
@@ -93,14 +103,8 @@ const styles = StyleSheet.create({
     status: {
         color: 'green'
     },
-    card: {
-        margin: 10,
-        backgroundColor: Colors.white,
-        padding: 20,
-        borderRadius: 5,
-    },
     scrollView: {
-        marginBottom: 50,
+        marginBottom: 60,
     },
     green: {
         color: 'green'

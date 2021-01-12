@@ -16,7 +16,7 @@ const FoundersScreen = ({navigation, context}) => {
         </View>)
 
     return (
-        <View>
+        <View style={styles.container}>
             <TabBar navigation={navigation} />
             <ScrollView style={styles.scrollView}>
                 { founderList[0] ? FounderList(founderList) : <Text style={{textAlign: 'center'}}>Информация отсутствует</Text>}
@@ -26,15 +26,19 @@ const FoundersScreen = ({navigation, context}) => {
 }
 
 const styles = StyleSheet.create({
+    container : {
+        backgroundColor: Colors.light,
+    },
     card: {
-        margin: 10,
         backgroundColor: Colors.white,
         padding: 20,
-        paddingVertical: 10,
-        borderRadius: 5,
+        margin: 10,
+        marginBottom: 0,
+        borderWidth: 1,
     },
     scrollView: {
         marginBottom: 50,
+        minHeight: 1000,
     },
 })
 

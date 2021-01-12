@@ -60,21 +60,22 @@ const TabBar = ({navigation}) => {
 
 const styles = StyleSheet.create({
     tabBox: {
-        backgroundColor: Colors.light,
+        backgroundColor: '#333',
         padding: 5,
     },
     tab: {
         padding: 10,
         backgroundColor: Colors.white,
         marginRight: 10,
-        borderRadius: 5,
+        borderRadius: 50,
         marginBottom: 5,
     },
     selectTab: {
         padding: 10,
-        backgroundColor: 'dodgerblue',
+        backgroundColor: '#fa8128',
         marginRight: 10,
-        borderRadius: 5,
+        borderRadius: 50,
+        marginBottom: 5,
     },
     tabText: {
         textTransform: 'uppercase',

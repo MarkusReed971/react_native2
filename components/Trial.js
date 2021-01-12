@@ -21,10 +21,11 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     card: {
-        margin: 10,
         backgroundColor: Colors.white,
         padding: 20,
-        borderRadius: 5,
+        margin: 10,
+        marginBottom: 0,
+        borderWidth: 1,
     },
 })
 

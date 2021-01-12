@@ -12,7 +12,7 @@ const PurchasesScreen = ({navigation, context}) => {
     const {purchaseList223, purchaseList44_94} = context;
 
     return (
-        <View>
+        <View style={styles.container}>
             <TabBar navigation={navigation} />
             <ScrollView style={styles.scrollView}>
                 <View style={styles.card}>
@@ -30,11 +30,15 @@ const PurchasesScreen = ({navigation, context}) => {
 }
 
 const styles = StyleSheet.create({
-    card: {
-        margin: 10,
+    container : {
         backgroundColor: Colors.light,
-        padding: 10,
-        borderRadius: 5,
+    },
+    card: {
+        backgroundColor: Colors.lighter,
+        padding: 20,
+        margin: 10,
+        marginBottom: 0,
+        borderWidth: 1,
     },
     h1: {
         fontSize: 24,
@@ -43,7 +47,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     scrollView: {
-        marginBottom: 50,
+        marginBottom: 60,
+        minHeight: 660,
     },
 })
 

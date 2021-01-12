@@ -17,7 +17,7 @@ const LicensesScreen = ({navigation, context}) => {
         </View>)
 
     return (
-        <View>
+        <View style={styles.container}>
             <TabBar navigation={navigation} />
             <ScrollView style={styles.scrollView}>
                 { licenseList[0] ? LicenseList(licenseList) : <Text style={{textAlign: 'center'}}>Информация отсутствует</Text>}
@@ -27,15 +27,19 @@ const LicensesScreen = ({navigation, context}) => {
 }
 
 const styles = StyleSheet.create({
+    container : {
+        backgroundColor: Colors.light,
+    },
     card: {
-        margin: 10,
         backgroundColor: Colors.white,
         padding: 20,
-        paddingVertical: 10,
-        borderRadius: 5,
+        margin: 10,
+        marginBottom: 0,
+        borderWidth: 1,
     },
     scrollView: {
-        marginBottom: 50,
+        marginBottom: 60,
+        minHeight: 660,
     },
 })
 

@@ -11,11 +11,12 @@ const Info = ({attribute, value}) => {
 
 const styles = StyleSheet.create({
     info: {
-        marginVertical: 7,
+        marginVertical: 10,
     },
     attribute: {
         // textTransform: 'uppercase',
-        color: '#b3b3b3',
+        // color: '#b3b3b3',
+        color: '#fa8128',
     },
     value: {
         fontSize: 16,
